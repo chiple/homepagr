@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       21e8a0eb-d3bb-4291-9a12-c120a7354c02
+:END:
+#+title: yay
+link here

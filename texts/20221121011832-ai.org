@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       c5f6e83c-31c9-4e06-8960-a76ff2cfa012
+:END:
+#+title: ai
+ounko
+[[id:75f89137-bcfe-4754-99c5-de10fcf2cb6c][ponko]]
