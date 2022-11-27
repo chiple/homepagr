@@ -8,8 +8,10 @@ unko
 |---------+------+-------------+-------------+--------------|
 | huh     | tot  | biggo titto | bigus titus | titus bigus! |
 
-[[homepagr/imgs/4.png]]
+[[./4.png]]
 [[homepagr/imgs/dal-damage.gif]]
+[[https://github.com/chiple/homepagr/tree/gh-pages/imgs/4.png]]
+[[https://github.com/chiple/homepagr/tree/gh-pages/imgs/dal-damage.gif]]
 
 * another (tit)le???
 ** nested
