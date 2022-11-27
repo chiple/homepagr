@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       04127807-7811-421f-9b4c-c3200285ca88
+:END:
+#+title: picture?
+
+* just trying to display text
+[[~/Dropbox/roam/images/testuml.png]]
+
+* what about table??
+| dog  | cat | inu  | inur | inuru |
+|------+-----+------+------+-------|
+| huh? | meh | aha! | yeah | best  |
