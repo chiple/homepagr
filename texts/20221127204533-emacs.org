@@ -1,0 +1,25 @@
+:PROPERTIES:
+:ID:       68c33ff8-27b5-4062-be0e-b5e73a7b9e9c
+:END:
+#+title: emacs
+
+* emacs とは
+なぜ Emacs をつかうかということがあります。かつて私は多くの友に emacs を使ってもらうように説得してきました。しかしそれは虚しくも、実現したことはありません。しかし[[https://www.emacswiki.org/emacs/ChurchOfEmacs][church of emacs]]のミッショナリーをやめるつもりもありません。むしろその活動の軸として、「emacs とはなにか」といったざっくりとした疑問に私なりに答えることで、読者の方の [[https://geekfeminismdotorg.wordpress.com/2009/11/14/quick-hit-richard-stallman-comments-on-emacs-virgins-incident/][emacs virginity]] を失わせたいと考えています。
+
+** 名称から考える
+emacs をエディタとしてしっている人は多いかもしれませんが、それがなんの略称か知っているひとは少ないでしょう。
+諸説ありますが、 ~Editor MACroS~ の略だというのが一般的なものだと思います。
+[[https://ec.europa.eu/eurostat/cros/content/macro-editing-theme_en#:~:text=Macro-editing%20(also%20known%20as,part%20thereof%2C%20have%20been%20collected.][ここ]]でマクロとは
+#+begin_quote
+Macros provide a convenient way to automate repetitive procedures you do frequently while writing code. You can record, edit and play back macros, assign a shortcut to them, and share them.
+#+end_quote
+というふうにいわれています。こうしたものが複数あるということが"Editor Macro"だといいたいわけです。[[https://ja.wikipedia.org/wiki/聖イグヌチウス][聖イグヌチウス]]はインタビューやカンファレンスで、ことあるごとにプロプラエタリからソフトウェアを解放する、OSS の自由の思想を語っており、上記引用の"share them"の部分を重視しているところがあります。ところがこの引用でいわれていることは 、OSS なのも含め、vim や他のモダンなエディタ（vscode など）でもできるとツッコミがはいりやすいところです。
+
+*** 自由のためのマクロ
+「スクリプトを share する」という言葉は少し足りないきがします。個人的には、エディタマクロが share されるのというのは、それを参照することを大いにサポートされているということなのだとおもいます。もちろん [[https://vim-jp.org/vimdoc-ja/tagsrch.html][tag jump]]などを用いて同じようなことを実現することは可能ですが、それはユーザーの手に委ねられます。しかし Emacs はそれをはじめから用意し、そのための関数（マクロ）を予め用意しています。Emacs をつかわずとも、他のひとのコードをよむということはもちろんできますが、Emacs はそういったことを手取り足取り教えてくれるわけです。
+
+*** emacs なりの自由さ
+以上で EMACS は自由があるということを少し熱血な感じのことをお話しましたけれども、まだ emacs の emacs らしさというのが明かにできてはいませんね。それを知るためには、今現在も誰かが開発している emacs のパッケージをつかったり、みてみるしかありません。このようにして emacs の「らしさ」をさがすためにスクリプトをかくというのは個人的に好きなことで、みなさんにも興味をもってほしいとおもっていることです。
+次の headline にいくまえに、簡単な例を挙げようとおもいます。それは、この homepage のことです。このページは org-roam という Package の一部の機能を用いて作られています。ローカルで編集したマークダウンのデータをいれている sqlite の データベースがあるのですが、その操作を行えそうな関数をさがし、そのまま使用して json に書き出して react によみやすいようにすることがササッとできるわけですね。マークダウンエディタはさまざまありますが、マクロ（何どもこう呼んでいますが、実際はただの関数です）がキーバインドされてつかえて、一部の機能を切り出して使えるというのは「らしさ」っちゃ「らしさ」だとおもいます。
+
+このような「らしさ」のナレッジとして、以降の headline と関連したノードを編集していくつもりです。

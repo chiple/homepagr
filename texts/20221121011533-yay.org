@@ -9,8 +9,8 @@ unko
 | huh     | tot  | biggo titto | bigus titus | titus bigus! |
 
 
-[[./imgs/4.png]]
-[[./imgs/dal-damage.gif]]
+[[./4.png]]
+[[./dal-damage.gif]]
 
 * another (tit)le???
 ** nested
@@ -19,8 +19,7 @@ What about にほんご？？
 
 code block is like thsi.
 
-#+begin_
-NOT HIGHT LIGHTED YET!!! 
+NOT HIGHT LIGHTED YET!!!
 
 #+begin_src emacs-lisp
 (print "ponko")
@@ -31,7 +30,6 @@ console.log("un")
 #+end_src
 
 NOT HIGHT LIGHTED YET!!! 
-
 
 #+begin_src python
 console.log("un")
