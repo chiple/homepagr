@@ -10,8 +10,7 @@ unko
 
 
 [[./imgs/4.png]]
-[[../imgs/4.png]]
-[[../../imgs/4.png]]
+[[./imgs/dal-damage.gif]]
 
 * another (tit)le???
 ** nested
