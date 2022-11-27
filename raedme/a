@@ -1,0 +1,19 @@
+/home/xyz/Dropbox/POKE/Web/raedme/scripts/build.js:11
+  throw err;
+  ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'babel-plugin-prismjs' imported from /home/xyz/Dropbox/POKE/Web/raedme/babel-virtual-resolve-base.js
+    at new NodeError (/home/xyz/Dropbox/POKE/Web/raedme/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:2327:5)
+    at packageResolve (/home/xyz/Dropbox/POKE/Web/raedme/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:2906:9)
+    at moduleResolve (/home/xyz/Dropbox/POKE/Web/raedme/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:2937:18)
+    at defaultResolve (/home/xyz/Dropbox/POKE/Web/raedme/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:2969:13)
+    at /home/xyz/Dropbox/POKE/Web/raedme/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:2990:14
+    at Generator.next (<anonymous>)
+    at asyncGeneratorStep (/home/xyz/Dropbox/POKE/Web/raedme/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:45:103)
+    at _next (/home/xyz/Dropbox/POKE/Web/raedme/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:46:194)
+    at /home/xyz/Dropbox/POKE/Web/raedme/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:46:364
+    at new Promise (<anonymous>) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v19.0.0

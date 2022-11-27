@@ -2,6 +2,7 @@ import React,  { useState, useEffect, useRef} from 'react';
 import './App.css';
 import Graphh from './graph'
 import Sidebar from './sidebar';
+import 'prismjs/themes/prism-okaidia.css'
 import ModalProvider from './modalContext'
 
 import { ModalBody, Modal, ModalOverlay, ModalContent,
@@ -31,6 +32,13 @@ function App() {
             }
           },
         }}}})
+const sampleCode = `
+// ソースコードの表示例
+void Test() {
+  const sum = 1 + 2;
+  console.log(sum);
+}
+`.trim();
 
   console.log(process.env.PUBLIC_URL)
   return (
