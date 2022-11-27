@@ -18,7 +18,22 @@ How is this displayed????
 What about にほんご？？
 
 code block is like thsi.
-#+begin_src emacs-lisp
-(print "world filled with tits(preffered)")
-#+end_src
+
+#+begin_
 NOT HIGHT LIGHTED YET!!! 
+
+#+begin_src emacs-lisp
+(print "ponko")
+#+end_src
+
+#+begin_src js
+console.log("un")
+#+end_src
+
+NOT HIGHT LIGHTED YET!!! 
+
+
+#+begin_src python
+console.log("un")
+#+end_src
+
