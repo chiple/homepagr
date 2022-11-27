@@ -1,5 +1,0 @@
-:PROPERTIES:
-:ID:       84abcb3c-a19d-4003-9eaf-c2fda9f5a89f
-:END:
-#+title: poyonko
-poyo poyo

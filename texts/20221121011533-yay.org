@@ -4,13 +4,20 @@
 #+title: yay
 * title
 unko
-| nursery | tits | boobs | tito      | titus bigus |
-|---------+------+-------+-----------+-------------|
-|         |      |       | goog vibe | aha!        |
+| nursery | tits | boobs       | tito        | titus bigus  |
+|---------+------+-------------+-------------+--------------|
+| huh     | tot  | biggo titto | bigus titus | titus bigus! |
 
-[[./4png]]
+[[homepagr/imgs/4.png]]
+[[homepagr/imgs/dal-damage.gif]]
 
-* another title
+* another (tit)le???
 ** nested
 How is this displayed????
 What about にほんご？？
+
+code block is like thsi.
+#+begin_src emacs-lisp
+(print "world filled with tits(preffered)")
+#+end_src
+NOT HIGHT LIGHTED YET!!! 

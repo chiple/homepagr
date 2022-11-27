@@ -1,4 +1,0 @@
-:PROPERTIES:
-:ID:       0595cf18-3533-46ad-b9bc-15544c537a85
-:END:
-#+title: pasodf
