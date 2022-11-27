@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       3ca9d85f-2893-4c89-a00c-cacc5f1fed72
+:END:
+#+title: wiki as graph

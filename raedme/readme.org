@@ -1,0 +1,61 @@
+#+title: Readme
+
+* これは何ですか
+[[https://docs.github.com/ja/pages/getting-started-with-github-pages/creating-a-github-pages-site][github pages]] と React でできたホームページです。
+調べものをここに残します。
+
+* なぜ作りましたか
+似たようなものに emacs で使える [[https://github.com/org-roam/org-roam-ui][org-roam-ui]] や [[https://obsidian.md/][obsedian ]]などがありますが、
+前者は emacs がサーバになって、ホスティングが大変で
+後者は一部有料です。
+なので、完全無料だが、ホスティングが楽な方法として、こういうものがあってもいいかと思いました。
+
+* どう始めますか
+1. github pages のリポジトリをつくる。
+2. emacs で [[https://www.orgroam.com/][org-roam]] をインストールする。
+3. 以下のスクリプトを emacs のコンフィグに追加しておきます。
+これは、roam で新しい記事（node と呼ばれます）の作成時のコールバックです。
+#+begin_src emacs-lisp
+(defun get-roam-links-json ()
+  (json-encode-alist
+   (org-uniquify-alist
+    (mapcar #'(lambda (x) (list (intern (car x)) (cadr x)))
+            (org-roam-db-query
+             `[:select  [links:source
+                         links:dest]
+               :from links
+               :where (= links:type "id")])))
+   ))
+
+(defun get-roam-nodes-json ()
+  (json-encode-alist (org-roam-db-query [:select [id
+                                                  file
+                                                  title
+                                                  level
+                                                  pos
+                                                  olp
+                                                  properties
+                                                  (funcall group-concat tag
+                                                           (emacsql-escape-raw \, ))]
+                                         :as tags
+                                         :from nodes
+                                         :left-join tags
+                                         :on (= id node_id)
+                                         :group :by id])))
+
+
+;; for the homepage, I have to prepare the id and link information as json.
+(defun create-node-and-link-json ()
+  (interactive)
+  (let ((output-dir "~/your roam dir/"))
+    (when (equal org-roam-directory output-dir)
+      (with-temp-file  (concat output-dir "/links.json")
+        (insert (get-roam-links-json)))
+      (with-temp-file (concat output-dir "/nodes.json")
+        (insert (get-roam-nodes-json)))
+      )
+    (message "node.json and links.json was written")
+    ))
+
+(add-to-list 'org-roam-capture-new-node-hook #'create-node-and-link-json)
+#+end_src

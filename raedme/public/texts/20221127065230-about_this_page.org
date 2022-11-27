@@ -1,0 +1,71 @@
+:PROPERTIES:
+:ID:       7fd864f6-a278-4214-8419-7b7701528e3a
+:END:
+#+title: about this page
+
+* なぜこれができたのか
+このページは [[id:3ca9d85f-2893-4c89-a00c-cacc5f1fed72][wiki as graph]]な web 上に 自分のナレッジを残すために作成されたものです。
+既にお気づきだと思いますが、ノードとエッジがそれぞれ、記事のそのものとリンクになっています。(「[[id:21e8a0eb-d3bb-4291-9a12-c120a7354c02][yay]]」という無意味なページを説明用に一応用意してみました。
+)。似たようなものに[[https://github-com.translate.goog/org-roam/org-roam-ui?_x_tr_sl=en&_x_tr_tl=ja&_x_tr_hl=ja&_x_tr_pto=sc][org-roam-ui]]や[[https://obsidian.md/][obsedian]]があります。こうしたサービスがもうあるのに、なぜわざわざこのサイトを作成したのかというと、うまい具合いに個人的なニーズにマッチしなかったからです
+
+** あまりお金をはらいたくない（obsedian じゃない理由）
+[[https://obsidian.md/][obsedian]]の方は機能が充実していますが、一部有料です。グラフビューがあるということで、Emacs で使えない[[https://github-com.translate.goog/org-roam/org-roam-ui?_x_tr_sl=en&_x_tr_tl=ja&_x_tr_hl=ja&_x_tr_pto=sc][org-roam-ui]]のようなものとして考えていて、それほど嬉しさがありません（いつか試そうとは思っています）。
+** Hosting が難しい（org-roam-ui じゃない理由）
+[[https://github-com.translate.goog/org-roam/org-roam-ui?_x_tr_sl=en&_x_tr_tl=ja&_x_tr_hl=ja&_x_tr_pto=sc][org-roam-ui]]は素晴しい Package ですが、残念ながら（これが嬉しいところでもあるんですが）バックエンドにあたる部分は Emacs 上の httpd プロセスなので、ホスティングしようと思うと、emacs をたちあげ続けたサーバと通信しなければならないということになります。
+[[https://mina86.com/2021/emacs-remote/][それらしきこと]]は可能らしく、試してみたいところですが、トリッキーすぎると思いました。
+
+以上のことの折衷案として、Github Pages をつかうことにしました。単に静的なサイトを作るならばばタダで web 上で情報が公開出来るので、これで十分です。さらにいえば、プルリクをおくって記事の内容を改善できるというおまけもついています。これで思慮に欠いた考察が世の中にでることを食い止めることができます。
+
+* どのようにして作られているのか
+ガワは React で、あとはすこしの Github Pages の設定ファイルと、少しの Elisp です。
+Elisp のスニペットはリポジトリの README にもおいたと思いますが、ここにも一応にも残します。
+[[https://www.orgroam.com/][org-roam]]で作成される DB から記事のリンクと ID をとってきて、記事を新規作成をしたときに、それらの情報を React で処理しやすいように Json にして、リポジトリの Public ディレクトリにおきます。
+
+#+begin_src emacs-lisp
+
+(defun get-roam-links-json ()
+  (json-encode-alist
+   (org-uniquify-alist
+    (mapcar #'(lambda (x) (list (intern (car x)) (cadr x)))
+            (org-roam-db-query
+             `[:select  [links:source
+                         links:dest]
+               :from links
+               :where (= links:type "id")])))
+   ))
+
+(defun get-roam-nodes-json ()
+  (json-encode-alist (org-roam-db-query [:select [id
+                                                  file
+                                                  title
+                                                  level
+                                                  pos
+                                                  olp
+                                                  properties
+                                                  (funcall group-concat tag
+                                                           (emacsql-escape-raw \, ))]
+                                         :as tags
+                                         :from nodes
+                                         :left-join tags
+                                         :on (= id node_id)
+                                         :group :by id])))
+
+
+;; for the homepage, I have to prepare the id and link information as json.
+(defun create-node-and-link-json ()
+  (interactive)
+  (let ((output-dir "~/Dropbox/POKE/Web/raedme/public/texts"))
+    (when (equal org-roam-directory output-dir)
+      (with-temp-file  (concat output-dir "/links.json")
+        (insert (get-roam-links-json)))
+      (with-temp-file (concat output-dir "/nodes.json")
+        (insert (get-roam-nodes-json)))
+      )
+    (message "node.json and links.json was written")
+    ))
+
+(add-to-list 'org-roam-capture-new-node-hook #'create-node-and-link-json)
+
+#+end_src
+
+React のほうは、[[https://github-com.translate.goog/org-roam/org-roam-ui?_x_tr_sl=en&_x_tr_tl=ja&_x_tr_hl=ja&_x_tr_pto=sc][org-roam-ui]]をそのまま使えれば楽だったのですが、うまくいかなかったので、とりあえず最低限の機能をモックした感じになっています。とはいえ、そのおかげで Graph 用のライブラリを使ってみたかったやつをつかったり、[[https://github-com.translate.goog/org-roam/org-roam-ui?_x_tr_sl=en&_x_tr_tl=ja&_x_tr_hl=ja&_x_tr_pto=sc][org-roam-ui]]で気に入らないところをいいかんじにできたりしたのでよかったとおもいます。

@@ -1,0 +1,32 @@
+#+title: Todo
+
+* TODO make the canvas of graph fit
+** useRef
+- [ ] make it change everytime canvas is resized
+[[file:~/Dropbox/POKE/Web/raedme/src/sidebar.tsx::const updateSidebarContentWidth = useCallback(() => {][just ration of size of sidebar is changed using callback]]
+[[file:~/Dropbox/POKE/Web/raedme/src/sidebar.tsx::const width = sidebarWrapRef.current.parentElement.clientWidth * u - scrollbarWidth;][why _ref_ ?????]]
+
+It's like plunging your hand in the box, putting it into your nearby handy box. If you have right mind, you can see the consequence in advance. If you handy box is filled and seems to be messy, that's really lame. It's just taking advantage of the existing woking thing not thinking about the future.
+
+if my graps is correct, ~ref~ is basically creating refference to DOM. So let's take a look at ~networkRef~ relatively from the top-down view. That's just getting the DOM on the browser. You have to pay attention to the fact that you can't basically touch the nested method or object. But with the useRef, it's okay, you can touch the network API.
+
+ref gets value when that's put in the props.
+[[file:~/Dropbox/POKE/Web/raedme/src/sidebar.tsx::ref={sidebarWrapRef}][see how ref is secondly initialized.]] Here, the reference is pointing to the width of the parent of the Box that's actually rendered div
+
+** what's happening
+when window is smallen, the canvas size doesn't go back to the former state.
+
+*** percentages?
+I don't set height using the window size.
+Maybe the background should be added.
+* TODO getting the content of org file
+** get file url from id
+missing info in nodes object.
+** make it put on the ~sidebar~
+graph and sidebar is on the same level
+* TODO zoom in using Graph-vis API
+the place of the center become different.
+** exact when the window size changes
+Graph window doesn't notice that his size is changed at the very first time to change the size of it. When the fuck is the sizing moment?
+
+So the redraw is flushing shit in the toilet.

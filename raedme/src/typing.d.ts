@@ -1,0 +1,5 @@
+declare module "react-graph-vis"
+declare module "unified"
+declare module "rehype-compiler"
+declare module "rehype-stringify"
+declare module "@mapbox/rehype-prism"

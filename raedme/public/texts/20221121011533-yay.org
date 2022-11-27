@@ -1,0 +1,39 @@
+:PROPERTIES:
+:ID:       21e8a0eb-d3bb-4291-9a12-c120a7354c02
+:END:
+#+title: yay
+* title
+unko
+| nursery | tits | boobs       | tito        | titus bigus  |
+|---------+------+-------------+-------------+--------------|
+| huh     | tot  | biggo titto | bigus titus | titus bigus! |
+
+
+[[./imgs/4.png]]
+[[./imgs/dal-damage.gif]]
+
+* another (tit)le???
+** nested
+How is this displayed????
+What about にほんご？？
+
+code block is like thsi.
+
+#+begin_
+NOT HIGHT LIGHTED YET!!! 
+
+#+begin_src emacs-lisp
+(print "ponko")
+#+end_src
+
+#+begin_src js
+console.log("un")
+#+end_src
+
+NOT HIGHT LIGHTED YET!!! 
+
+
+#+begin_src python
+console.log("un")
+#+end_src
+
