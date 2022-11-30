@@ -4,34 +4,31 @@
 #+title: yay
 * title
 unko
-| nursery | tits | boobs       | tito        | titus bigus  |
-|---------+------+-------------+-------------+--------------|
-| huh     | tot  | biggo titto | bigus titus | titus bigus! |
+| table | test | how  | does it | llook |
+|-------+------+------+---------+-------|
+| i     | hope | it's | really  | nice  |
 
 
+* png and gif
 [[./4.png]]
-[[./dal-damage.gif]]
+[[./imgs/dal-damage.gif]]
 
 * another (tit)le???
 ** nested
 How is this displayed????
 What about にほんご？？
+code block is like this.
 
-code block is like thsi.
-
-NOT HIGHT LIGHTED YET!!!
-
+* syntax highlight test
 #+begin_src emacs-lisp
-(print "ponko")
+(print "aha")
 #+end_src
 
 #+begin_src js
-console.log("un")
+console.log("aha")
 #+end_src
 
-NOT HIGHT LIGHTED YET!!! 
-
 #+begin_src python
-console.log("un")
+console.log("yay")
 #+end_src
 
