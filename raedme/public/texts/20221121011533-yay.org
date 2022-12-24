@@ -2,38 +2,35 @@
 :ID:       21e8a0eb-d3bb-4291-9a12-c120a7354c02
 :END:
 #+title: yay
-* title
-unko
-| nursery | tits | boobs       | tito        | titus bigus  |
-|---------+------+-------------+-------------+--------------|
-| huh     | tot  | biggo titto | bigus titus | titus bigus! |
+
+このページはマークダウン(現在は org file のみ)から、HTML に変換する際の見た目のテストをするためのページです。
 
 
-[[./imgs/4.png]]
+* table test
+| table | test | how  | does it | llook |
+|-------+------+------+---------+-------|
+| i     | hope | it's | really  | nice  |
+
+* png and gif
+[[./4.png]]
 [[./imgs/dal-damage.gif]]
 
-* another (tit)le???
+* another title???
 ** nested
 How is this displayed????
 What about にほんご？？
+code block is like this.
 
-code block is like thsi.
-
-#+begin_
-NOT HIGHT LIGHTED YET!!! 
-
+* syntax highlight test
 #+begin_src emacs-lisp
-(print "ponko")
+(print "aha")
 #+end_src
 
 #+begin_src js
-console.log("un")
+console.log("aha")
 #+end_src
 
-NOT HIGHT LIGHTED YET!!! 
-
-
 #+begin_src python
-console.log("un")
+console.log("yay")
 #+end_src
 

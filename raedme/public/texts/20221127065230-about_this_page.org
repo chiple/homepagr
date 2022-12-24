@@ -5,16 +5,25 @@
 
 * なぜこれができたのか
 このページは [[id:3ca9d85f-2893-4c89-a00c-cacc5f1fed72][wiki as graph]]な web 上に 自分のナレッジを残すために作成されたものです。
-既にお気づきだと思いますが、ノードとエッジがそれぞれ、記事のそのものとリンクになっています。(「[[id:21e8a0eb-d3bb-4291-9a12-c120a7354c02][yay]]」という無意味なページを説明用に一応用意してみました。
-)。似たようなものに[[https://github-com.translate.goog/org-roam/org-roam-ui?_x_tr_sl=en&_x_tr_tl=ja&_x_tr_hl=ja&_x_tr_pto=sc][org-roam-ui]]や[[https://obsidian.md/][obsedian]]があります。こうしたサービスがもうあるのに、なぜわざわざこのサイトを作成したのかというと、うまい具合いに個人的なニーズにマッチしなかったからです
+既にお気づきだと思いますが、ノードとエッジがそれぞれ、記事のそのものとリンクになっています
+[[id:21e8a0eb-d3bb-4291-9a12-c120a7354c02][fay]]
 
-** あまりお金をはらいたくない（obsedian じゃない理由）
-[[https://obsidian.md/][obsedian]]の方は機能が充実していますが、一部有料です。グラフビューがあるということで、Emacs で使えない[[https://github-com.translate.goog/org-roam/org-roam-ui?_x_tr_sl=en&_x_tr_tl=ja&_x_tr_hl=ja&_x_tr_pto=sc][org-roam-ui]]のようなものとして考えていて、それほど嬉しさがありません（いつか試そうとは思っています）。
-** Hosting が難しい（org-roam-ui じゃない理由）
-[[https://github-com.translate.goog/org-roam/org-roam-ui?_x_tr_sl=en&_x_tr_tl=ja&_x_tr_hl=ja&_x_tr_pto=sc][org-roam-ui]]は素晴しい Package ですが、残念ながら（これが嬉しいところでもあるんですが）バックエンドにあたる部分は Emacs 上の httpd プロセスなので、ホスティングしようと思うと、emacs をたちあげ続けたサーバと通信しなければならないということになります。
+** 既存のサービスが個人的なニーズにマッチしなかった
+似たようなものに[[https://github-com.translate.goog/org-roam/org-roam-ui?_x_tr_sl=en&_x_tr_tl=ja&_x_tr_hl=ja&_x_tr_pto=sc][org-roam-ui]]や[[https://obsidian.md/][obsedian]]があります。こうしたサービスがもうあるのに、なぜわざわざこのサイトを作成したのかというと、うまい具合いにほしいものがないわけですね。
+
+
+*** あまりお金をはらいたくない（obsedian じゃない理由）
+[[https://obsidian.md/][obsedian]]の方は機能が充実していますが、一部有料です。グラフビューがあるということで、[[id:68c33ff8-27b5-4062-be0e-b5e73a7b9e9c][emacs]] で使えない[[https://github-com.translate.goog/org-roam/org-roam-ui?_x_tr_sl=en&_x_tr_tl=ja&_x_tr_hl=ja&_x_tr_pto=sc][org-roam-ui]]のようなものとして考えていて、それほど嬉しさがありません（いつか試そうとは思っています）。
+
+*** Hosting が難しい（org-roam-ui じゃない理由）
+[[https://github-com.translate.goog/org-roam/org-roam-ui?_x_tr_sl=en&_x_tr_tl=ja&_x_tr_hl=ja&_x_tr_pto=sc][org-roam-ui]]は素晴しい Package ですが、残念ながら（これが嬉しいところでもあるんですが）バックエンドにあたる部分は [[id:68c33ff8-27b5-4062-be0e-b5e73a7b9e9c][emacs]] 上の httpd プロセスなので、ホスティングしようと思うと、[[id:68c33ff8-27b5-4062-be0e-b5e73a7b9e9c][emacs]]をたちあげ続けたサーバと通信しなければならないということになります。
 [[https://mina86.com/2021/emacs-remote/][それらしきこと]]は可能らしく、試してみたいところですが、トリッキーすぎると思いました。
 
 以上のことの折衷案として、Github Pages をつかうことにしました。単に静的なサイトを作るならばばタダで web 上で情報が公開出来るので、これで十分です。さらにいえば、プルリクをおくって記事の内容を改善できるというおまけもついています。これで思慮に欠いた考察が世の中にでることを食い止めることができます。
+
+** ナレッジ作成にプレッシャーがほしかった
+もともと個人的に[[https://github-com.translate.goog/org-roam/org-roam-ui?_x_tr_sl=en&_x_tr_tl=ja&_x_tr_hl=ja&_x_tr_pto=sc][org-roam-ui]]をつかっていて、忘備録や日記をかいていたわけですが、お粗末な文章をかいていたことにある日ゾッとしまして、あくまで世界中からアクセス可能な形で残すことでちゃんと書くようにしようとおもいました。
+またお粗末であるので見返すのが少し怖くなってきたということもあります。そうした死にかけている文書のサルベージも大いに目的となっています。
 
 * どのようにして作られているのか
 ガワは React で、あとはすこしの Github Pages の設定ファイルと、少しの Elisp です。
